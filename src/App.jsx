@@ -56,8 +56,7 @@ function App() {
                 </a>
                 <ul
                   className="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
+                  aria-labelledby="navbarDropdownMenuLink">
                   <li>
                     <a className="dropdown-item" href="#">
                       Action
@@ -260,29 +259,29 @@ function App() {
 
               <div className="product-info">
                 <div className="left-items">
-                  <div
+                  <button
                     className={`prod-details ${
-                      activeTab === "details" ? "active" : ""
+                      activeTab === "details" ? "active-detail" : ""
                     }`}
                     onClick={() => setActiveTab("details")}
                   >
                     Product Details
-                  </div>
-                  <div
+                  </button>
+                  <button
                     className={`package ${
-                      activeTab === "packaging" ? "active" : ""
+                      activeTab === "packaging" ? "active-package" : ""
                     }`}
                     onClick={() => setActiveTab("packaging")}
                   >
                     Packaging
-                  </div>
+                  </button>
                 </div>
-                <div
-                  className={`ship ${activeTab === "shipping" ? "active" : ""}`}
+                <button
+                  className={`ship ${activeTab === "shipping" ? "active-ship" : ""}`}
                   onClick={() => setActiveTab("shipping")}
                 >
                   Shipping Information
-                </div>
+                </button>
               </div>
 
               <div className="description2">
