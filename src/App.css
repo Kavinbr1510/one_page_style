@@ -341,7 +341,7 @@ sans-serif; */
 .description {
   grid-area: des;
   font-size: 16px;
-  color: rgb(23, 21, 21);
+  color: rgb(36, 38, 35);
   font-family: "Helvetica Neue";
 }
 /* fifth container in .second-column */
@@ -525,7 +525,7 @@ sans-serif; */
   grid-column-start: 1;
   width: 137%;
   font-size: 16px;
-  color: rgb(23, 21, 21);
+  color: rgb(36, 38, 35);
   font-family: "Helvetica Neue";
   padding: 5px;
 }
