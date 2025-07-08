@@ -1,0 +1,707 @@
+import React, { useState } from "react";
+import shoppingIcon from "./assets/shopping.png";
+import barChair from "./assets/chair1.png";
+import barChair2 from "./assets/chair1_2.png";
+import barChair3 from "./assets/chair1_3.png";
+import barChair4 from "./assets/chair1_4.png";
+import barChair5 from "./assets/chair1_5.png";
+import person from "./assets/person.jpeg";
+import "./App.css"; // Import the CSS file
+
+function App() {
+  return (
+    <>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light p-5">
+        <div className="container-fluid">
+          <a className="navbar-brand  " href="#">
+            <img
+              src={shoppingIcon}
+              alt=""
+              width="30"
+              height="24"
+              className="d-inline-block align-text-top "
+            />{" "}
+            Chamat
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link text-dark" aria-current="page" href="#">
+                  About Us
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link text-dark"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Catalogue <i className="fas fa-angle-down"></i>
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-dark" href="#">
+                  FAQ
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link text-dark" href="#" tabIndex="-1">
+                  Blog
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link  text-dark"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Socials <i className="fas fa-angle-down"></i>
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form className="d-flex align-items-center searchform">
+              <div className="input-group rounded-pill overflow-hidden d-none d-lg-flex border">
+                <span className="input-group-text bg-white border-0">
+                  <i className="fas fa-search search"></i>
+                </span>
+                <input
+                  className="form-control border-0"
+                  type="search"
+                  placeholder="Search our chair"
+                  aria-label="Search"
+                />
+              </div>
+            </form>
+            <div className="d-flex align-items-center   justify-content-around rounded-pill border   ms-2 w-5 cartbox">
+              <i className="fas fa-shopping-cart me-2"></i>
+              <span className="me-1 cart">My Cart</span>
+              <span className="rounded-pill me-2">(0)</span>
+              <i className="fas fa-chevron-down"></i>
+            </div>
+            <div className="d-flex align-items-center   justify-content-around rounded-pill border   ms-2 w-5 userbox">
+              <i className="fas fa-user me-2 bg-transparent"></i>
+              <span className="me-1 login">Login</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div className="d-flex second-nav w-100 p-5">
+        <div className="d-flex justify-content-around rounded-pill border ms-2 backbox1">
+          <i className="fas fa-arrow-left me-2 bg-transparent backicon"></i>
+          <span className="me-1 back">Back</span>
+        </div>
+
+        <div className="d-flex align-items-center justify-content-around ms-2 backbox">
+          <span className="text-muted me-2 forwardtext">Catalogue</span>
+          <i className="fas fa-angle-double-right ms-1 bg-transparent forwardicon"></i>
+        </div>
+
+        <div className="d-flex align-items-center justify-content-around backbox">
+          <span className="text-muted me-2 forwardtext">Bar chair</span>
+          <i className="fas fa-angle-double-right ms-1 bg-transparent forwardicon"></i>
+        </div>
+
+        <div className="d-flex align-items-center justify-content-around backbox">
+          <span className="me-1 back">Zenith Zen Chair</span>
+        </div>
+
+        <div className="d-flex align-items-center justify-content-end last">
+          <i className="fas fa-triangle-exclamation me-1"></i>
+          <span className="report">Report This Product</span>
+        </div>
+      </div>
+
+      {/* main content */}
+      <div className="container-fluid main-content">
+        <div class="row align-items-start">
+          <div className="col first-column">
+            <img src={barChair} className="card-img-top" alt="..." />
+
+            <div class="card-footer d-flex align-items-center border-0">
+              <img src={barChair2} className="card-img-top" alt="..." />
+              <img src={barChair3} className="card-img-top" alt="..." />
+              <img src={barChair4} className="card-img-top" alt="..." />
+              <img src={barChair5} className="card-img-top" alt="..." />
+            </div>
+          </div>
+
+          <div className="col second-column">
+            <div className="chair-name">Bar Chair</div>
+            <div className="sub-name">LuxeBar Elegenza</div>
+            <div className="wishlist">
+              <i class="far fa-heart"></i> Add to Wishlist
+            </div>
+            <div className="rating">
+              <i class="fas fa-star"></i> <span className="rate">4.9 </span>{" "}
+              <span className="views">20K+ Reviews</span>
+            </div>
+            <div className="description">
+              Contrary to popular belief, Lorem Ipsum is not simply random text.
+              It has roots in a piece of classical Latin literature from 45 BC,
+              making it over 2000 years old. Richard McClintock, a Latin
+              professor at Hampden-Sydney College in Virginia, looked up one of
+              the more obscure Latin words, consectetur, from a Lorem Ipsum
+              passage, and going through the cites of the word in classical
+              literature, discovered the undoubtable source.
+            </div>
+            <div className="price">
+              <div className="offer">$129.00</div>
+              <div className="original">$150.00</div>
+              <div className="discount">10% off!</div>
+              <div className="addcart">Add to Cart</div>
+            </div>
+            <div className="underline"></div>
+
+            <div className="choose-color">
+              <div className="color-details">
+                <div className="color-label">Colors</div>
+                <div className="selected-color">Black</div>
+              </div>
+              <div className="color-options">
+                <img src={barChair} alt="Black" className="selected" />
+                <img src={barChair} alt="Green" />
+                <img src={barChair} alt="Red" />
+              </div>
+            </div>
+
+            <div className="product-info">
+              <div className="left-items">
+                <div className="prod-details">Product Details</div>
+                <div className="package">Packaging</div>
+              </div>
+              <div className="ship">Shipping Information</div>
+            </div>
+
+            <div className="description2">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium voluptatum deleniti atque corrupti quos
+              dolores et quas molestias excepturi sint occaecati cupiditate non
+              provident, similique sunt in culpa qui officia deserunt mollitia
+              animi, id est laborum et dolorum fuga.
+            </div>
+
+            <div class="measure">
+              <div class="measure-item">
+                <div class="title">
+                  <i class="fas fa-ruler"></i> <span>Size</span>
+                </div>
+                <div class="details">
+                  <div className="text1">Height</div>
+                  <div>43 inches</div>
+                </div>
+                <div class="details">
+                  <div className="text1">Width</div>
+                  <div>20 inches</div>
+                </div>
+              </div>
+              <div class="measure-item">
+                <div class="title">
+                  <i class="fas fa-tools"></i> <span>Material</span>
+                </div>
+                <div class="details">
+                  <div className="text1">Seat</div>
+                  <div>premium Leather</div>
+                </div>
+                <div class="details">
+                  <div className="text1">Legs</div>
+                  <div>Teak wood & Metal</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="reviewrating">
+              <div className="reviewleft">Reviews & Rating</div>
+              <div className="end">
+                View All Reviews <i class="fas fa-arrow-right"></i>{" "}
+              </div>
+            </div>
+
+            <div class="review-container">
+              <div className="reviewer-information">
+                <div className="reviewer-img">
+                  <img src={person} alt="Reviewer Avatar" />
+                </div>
+                <div className="name-date-group">
+                  <div className="reviewer-name">John Doe</div>
+                  <div className="review-date">July 4, 2025</div>
+                </div>
+                <div className="reviewer-rating">
+                  {" "}
+                  <i class="fas fa-star"></i> <span className="rate">4.9 </span>{" "}
+                </div>
+              </div>
+              <div className="review-full-content">
+                <p>
+                  It’s super comfortable, but its plush, pillowy appearance
+                  belies a far more rigid structure. It’s far firmer than I
+                  expected upon first glance. This initially came as a
+                  disappointment, but that disappointment was tempered by the
+                  fact that it almost seems to encourage an ergonomic
+                  correctness. I can see some thinking it is a bit too firm, as
+                  my husband did. But many accent chairs aren’t conducive to
+                  being sat in for a long time while typing on a laptop, and it
+                  works well for this purpose (at least for me) because it
+                  really keeps its form.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from "react";
+import shoppingIcon from "./assets/shopping.png";
+import productData from "./productData";
+import "./App.css"; // Import the CSS file
+
+function App() {
+  const product = productData[0];
+  const [activeTab, setActiveTab] = useState("details");
+  // const [selectedImage, setSelectedImage] = useState(productData[0]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+  const [cartvalue, setCartvalue] = useState(0);
+  const [selectedWishlist, setWishlist] = useState(false);
+
+  return (
+    <>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light p-5">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            <img
+              src={shoppingIcon}
+              alt=""
+              width="30"
+              height="24"
+              className="d-inline-block align-text-top "
+            />{" "}
+            Chamat
+          </a>
+          <div
+            className="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link text-dark" aria-current="page" href="#">
+                  About Us
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link text-dark"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Catalogue <i className="fas fa-angle-down"></i>
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-dark" href="#">
+                  FAQ
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link text-dark" href="#" tabIndex="-1">
+                  Blog
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link  text-dark"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Socials <i className="fas fa-angle-down"></i>
+                </a>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form className="d-flex align-items-center searchform">
+              <div className="input-group rounded-pill overflow-hidden d-none d-lg-flex border">
+                <span className="input-group-text bg-white border-0">
+                  <i className="fas fa-search search"></i>
+                </span>
+                <input
+                  className="form-control border-0"
+                  type="search"
+                  placeholder="Search our chair"
+                  aria-label="Search"
+                />
+              </div>
+            </form>
+            <div className="d-flex align-items-center   justify-content-around rounded-pill border   ms-2 w-5 cartbox">
+              <i className="fas fa-shopping-cart me-2"></i>
+              <span className="me-1 cart">My Cart</span>
+              <span className="rounded-pill me-2">({cartvalue})</span>
+              <i className="fas fa-chevron-down"></i>
+            </div>
+            <div className="d-flex align-items-center   justify-content-around rounded-pill border   ms-2 w-5 userbox">
+              <i className="fas fa-user me-2 bg-transparent"></i>
+              <span className="me-1 login">Login</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div className="d-flex second-nav justify-content-between align-items-center p-3 flex-wrap">
+        <div className="d-flex align-items-center backbox1">
+          <i className="fas fa-arrow-left me-2 bg-transparent backicon"></i>
+          <span className="me-1 back">Back</span>
+        </div>
+
+        <div className="d-flex flex-wrap center-section mx-auto">
+          <div className="d-flex align-items-center justify-content-around ms-2 backbox">
+            <span className="text-muted me-2 forwardtext">Catalogue</span>
+            <i className="fas fa-angle-double-right ms-1 bg-transparent forwardicon"></i>
+          </div>
+          <div className="d-flex align-items-center justify-content-around backbox">
+            <span className="text-muted me-2 forwardtext">Bar chair</span>
+            <i className="fas fa-angle-double-right ms-1 bg-transparent forwardicon"></i>
+          </div>
+
+          <div className="d-flex align-items-center justify-content-around backbox">
+            <span className="me-1 forwardtext">Zenith Zen Chair</span>
+          </div>
+        </div>
+
+        {/* Right-most Report button */}
+        <div className="d-flex align-items-center last">
+          <i className="fas fa-triangle-exclamation me-1"></i>
+          <span className="report">Report This Product</span>
+        </div>
+      </div>
+
+      {/* main content */}
+
+      <div className="container-fluid main-content">
+        <div className="row align-items-start">
+          <div className="col first-column">
+            <div className="mainimage">
+              <img
+                src={product.galleryImages[selectedImageIndex]}
+                className="card-img-top"
+                alt="..."
+              />
+            </div>
+            <div className="card-footer d-flex align-items-center border-0">
+              {product.galleryImages.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  className={`card-img ${
+                    selectedImageIndex === i ? "card-img-active" : ""
+                  }`}
+                  alt={`Thumbnail ${i}`}
+                  onClick={() => {
+                    setSelectedImageIndex(i);
+                    console.log("Selected Image:", img);
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="col second-column">
+            <div className="chair-name">{product.chairName}</div>
+            <div className="sub-name">{product.subName}</div>
+            <div
+              className="wishlist"
+              onClick={() => setWishlist(!selectedWishlist)}
+            >
+              <i
+                className={
+                  selectedWishlist ? "fas fa-heart text-danger" : "far fa-heart"
+                }
+              ></i>
+              {selectedWishlist ? "Product Wishlisted" : " Add to Wishlist"}
+            </div>
+
+            <div className="rating">
+              <i className="fas fa-star"></i>{" "}
+              <span className="rate">{product.rating}</span>{" "}
+              <span className="views">20K+ Reviews</span>
+            </div>
+            <div className="description">{product.description}</div>
+            <div className="price">
+              <div className="offer">{product.offer}</div>
+              <div className="original">{product.original}</div>
+              <div className="discount">{product.discount}</div>
+              <div
+                className="addcart"
+                onClick={(e) => {
+                  setCartvalue(cartvalue + 1);
+                }}
+              >
+                Add to Cart
+              </div>
+            </div>
+            <div className="underline"></div>
+
+            <div className="choose-color">
+              <div className="color-details">
+                <div className="color-label">Colors</div>
+                <div className="selected-color">Color {selectedColorIndex + 1}</div>
+
+              </div>
+
+              <div className="color-options">
+                {product.colorOptions.map((img, i) => (
+                  <img
+                    key={i}
+                    src={img}
+                    alt={`Color ${i}`}
+                    className={`color-swatch ${
+                      i === selectedColorIndex ? "active-color" : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedColorIndex(i);
+                      setSelectedImageIndex(i); 
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="product-info">
+              <div className="left-items">
+                <div
+                  className={`prod-details ${
+                    activeTab === "details" ? "active" : ""
+                  }`}
+                  onClick={() => setActiveTab("details")}
+                >
+                  Product Details
+                </div>
+                <div
+                  className={`package ${
+                    activeTab === "packaging" ? "active" : ""
+                  }`}
+                  onClick={() => setActiveTab("packaging")}
+                >
+                  Packaging
+                </div>
+              </div>
+              <div
+                className={`ship ${activeTab === "shipping" ? "active" : ""}`}
+                onClick={() => setActiveTab("shipping")}
+              >
+                Shipping Information
+              </div>
+            </div>
+
+            <div className="description2">
+              {activeTab === "details" && <p>{product.productInfo.details}</p>}
+              {activeTab === "packaging" && (
+                <p>{product.productInfo.packaging}</p>
+              )}
+              {activeTab === "shipping" && (
+                <p>{product.productInfo.shipping}</p>
+              )}
+            </div>
+
+            <div className="measure">
+              <div className="measure-item">
+                <div className="title">
+                  <i className="fas fa-ruler"></i> <span>Size</span>
+                </div>
+                {Object.entries(product.measurements.size).map(
+                  ([label, value]) => (
+                    <div className="details" key={label}>
+                      <div className="text1">{label}</div>
+                      <div>{value}</div>
+                    </div>
+                  )
+                )}
+              </div>
+              <div className="measure-item">
+                <div className="title">
+                  <i className="fas fa-tools"></i> <span>Material</span>
+                </div>
+                {Object.entries(product.measurements.material).map(
+                  ([label, value]) => (
+                    <div className="details" key={label}>
+                      <div className="text1">{label}</div>
+                      <div>{value}</div>
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+
+            <div className="reviewrating">
+              <div className="reviewleft">Reviews & Rating</div>
+              <div className="end">
+                View All Reviews <i className="fas fa-arrow-right"></i>
+              </div>
+            </div>
+            <div className="review-container">
+              {product.reviews.map((review, index) => (
+                <div className="single-review" key={index}>
+                  <div className="reviewer-information">
+                    <div className="reviewer-img">
+                      <img src={review.avatar} alt="Reviewer Avatar" />
+                    </div>
+                    <div className="name-date-group">
+                      <div className="reviewer-name">{review.name}</div>
+                      <div className="review-date">{review.date}</div>
+                    </div>
+                    <div className="reviewer-rating">
+                      <i className="fas fa-star"></i>{" "}
+                      <span className="rate">{review.rating}</span>
+                    </div>
+                  </div>
+                  <div className="review-full-content">
+                    <p>{review.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
